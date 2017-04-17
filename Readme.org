@@ -1,6 +1,6 @@
 #+TITLE: Solucionario de Intro al Desarrollo de Programas con Java 2°Ed de Amparo Lopez Gaona
 * Breve descripcion
   En este repositorio estaran resueltos todos(asi lo espero) los ejercicios del [[http://www.fciencias.unam.mx/comunicacion/publicaciones/detalle/1][libro de la profesora Gaona.]]
- ![alt tag](https://tienda.fciencias.unam.mx/59-large/introduccion-a-la-teoria-intuitiva-de-conjuntos.jpg)
+  [https://camo.githubusercontent.com/7ca3dd7cd428da94a3d51c194942ef338ffc0cb6/68747470733a2f2f7469656e64612e666369656e636961732e756e616d2e6d782f35392d6c617267652f696e74726f64756363696f6e2d612d6c612d74656f7269612d696e747569746976612d64652d636f6e6a756e746f732e6a7067]
 
   
