@@ -1,0 +1,119 @@
+#+TITLE: Ejercicios del capitulo uno.
+* Ejercicios
+  1) ¿Que ventajas tiene hacer un diseño antes de codificar?
+     En el diseño es necesario identificar los principales componentes de la solucion y la relacion entre ellos.
+     Las ventajas que dan un diseño antes de codificar son:
+     * Coherencia al programa.
+     * Facilidad  para incluir nuevas funcionalidades al programa.
+     * Con un buen diseño pueden evitarse problemas posteriores.
+
+  2) ¿Cuales son los tres pasos en la metodologia de diseño?
+     1. Encontrar los objetos principales, hacer de manera adecuada la relacion sustantivo-clase.
+     2. Encontrar el comportamiento deseado de las clases, relacion verbos-metodos.
+     3. Determinar colaboracion entre objetos mediante escenarios. (i.e. similar a una Vista[MVC])
+
+  3) ¿Que es una clase?
+     Una clase es un molde a partir del cual se pueden crear objetos con la estructura y el comportamiento
+     definidos en ella.
+     
+  4) ¿Cual es la relacion entre clase y objeto?
+     Un objeto "X" es una instancia[fn:1] de una clase "Y", i.e. el objeto "X" tiene la estructura y comportamiento
+     las cuales estan determinadas en la clase "Y".
+     
+  5) Dar tres ejemplos de clases y un par de objetos de cada clase:
+     * clase Lista - objetos; ListaPar, ListaImpar.
+     * clase Libro - objetos; Quijote, Montecristo.
+     * clase Grafica - objetos; Petersen, Bipartita.
+
+  6) ¿La estructura y el estado de dos objetos de la misma clase son siempre iguales?¿Por que?
+     No, la estructura es igual ya que vienen de la misma clase, pero el estado no siempre es igual debido a que
+     el objeto1 pudo habersele aplicado un comportamiento(metodos) distinto que al objeto2.
+
+  7) Definir estructura y comportamiento para objetos de las siguientes clases: alumno, automovil, cuenta bancaria,
+     telefono celular, computadora.
+     * Alumno
+       | estructura | comportamiento      |
+       |------------+---------------------|
+       | Miembro    | Inscribirse         |
+       |            | Darse de baja       |
+       |            | Baja temporal       |
+       |            | Consultar Historial |
+       
+     * Automovil
+       | estructura | comportamiento |
+       |------------+----------------|
+       | Transporte | Acelerar       |
+       |            | Frenar         |
+       |            | Encender       |
+       |            | Apagar         |
+
+     * Cuenta Bancaria
+       | estructura | comportamiento   |
+       |------------+------------------|
+       | Cuenta     | Pedir IP         |
+       |            | Pedir emisora    |
+       |            | Consultar nombre |
+
+     * Telefono Celular
+       | estructura  | comportamiento |
+       |-------------+----------------|
+       | Comunicador | Llamar         |
+       |             | Conterstar     |
+       |             | Mandar mensaje |
+       |             | Encender       |
+       |             | Apagar         |
+       
+     * Computadora
+       | estructura | comportamiento  |
+       |------------+-----------------|
+       | Gadget     | Apagar          |
+       |            | Encender        |
+       |            | Consultar fecha |
+
+  8) Utilizando la metodologia presentada escribir un algoritmo para enviarle flores a un 
+     ser querido.
+     El sustantivo flores lo convertiria en mi clase la cual nombraria como Flor a su vez esta tendria
+     entre sus metodos el metodo enviar, el usuario entraria a un menu en el cual el elegiria cuantas flores
+     comprar, que tipo de flores, si regalarlas, si enviarlas o no, si donarlas, etc.
+
+  9) ¿Cual es la importancia del bytecode de Java?
+     Su importancia radica en la portabilidad de los programas.
+
+  10) ¿Que significa que un programa sea portable?
+      Refiriendonos a Java, se refiere a que cualquier ordenador con JVM puede correr Java, en otras palabras
+      que sea portable significa que Java no dependa del OS o del CPU.
+
+  11) ¿Cual es el objetivo de la JVM?
+      La Java Virtual Machine se encarga de ejecutar el bytecode.
+
+  12) ¿Como se ejecuta un programa originalmente escrito en Java?
+      Una vez compilado[ *javac "\Nombre_de_la_Clase.java"\* ] se ejecuta el archivo /.class/ en la terminal con la
+      instruccion *java "\Nombre_de_la_Clase"\*
+
+  13) ¿Que es un paquete en Java?
+      Un paquete es una biblioteca, la cual es un conjunto de clases e interfaces que se presentan compiladas al programador.
+
+  14) ¿Que tipo de errores se pueden tener en un programa?
+      * Errores de sintaxtis
+      * Errores de ligado (e.g. no se especificaron las bibliotecas)
+      * Errores de logica (compila pero no funciona de forma deseada)
+      * Errores de ejecucion (e.g. division entre cero)
+
+  15) ¿ Como se puede detectar los errores en la logica del programa?
+      Con pruebas de ejecucion, con una prueba de escritorio o imprimir valores intermedios para ir revisando su "correctud".
+
+  16) Especificar los tipos de mantenimiento que existen.
+      * *Correctivo* Se realiza cuando se detectan errores debidos a cambios en la version del software utilizado ó cuando se
+	encuentran mejores algoritmos para alguna parte del programa.
+      * *Adaptativo* Se efectuan cambios al programa para incorporar aspectos no considerados en un principio.
+
+  17) ¿Cual es el proceso de la documentacion y en que momento se hace?
+      La documentacion se debe hacer en paralelo con el codigo escrito y es un proceso continuo que inicia una vez 
+      formulada la descripcion del problema a resolver y continua durante el diseño de la solucion, el deserrollo de algoritmos,
+      la codificacion, la depuracion, etc.
+* Footnotes
+
+[fn:1] Las ciencias tienen traducciones incorrectas o simplemente falsos cognados, en este caso 
+cuando se habla de instancia se refiere a la palabra /instance/ del ingles que significa: ejemplo.
+Entonces podemos decir que un objeto "X" es un ejemplo de una clase "Y".
+ 
