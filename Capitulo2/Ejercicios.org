@@ -26,7 +26,7 @@
        int posicion // Indica la posicion del objeto ;
      #+END_SRC
      Es sintacticamente incorrecta, el *;* es detectado por el compilador como un simple comentario.
-  6) ¿Existe alguna diferencia entre tener *bancario* y *\"bancario"\*?
+  6) ¿Existe alguna diferencia entre tener *bancario* y *\\"bancario"\\*?
      Si, ya que la primera es el nombre de una variable y la segunda es una cadena.
   7) ¿cuales de las siguientes cadenas no pueden ser identificadores en Java?¿porque?
      | java.awt.Graphics | *.* caracter no valido en la declaracion de indentificador           |
