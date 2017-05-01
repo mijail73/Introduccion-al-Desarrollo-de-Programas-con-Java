@@ -1,0 +1,66 @@
+#+TITLE: Ejercicios del capitulo dos.
+* Ejercicios
+  1) ¿Cuantos tipos de datos hay para reresentar numeros enteros?¿En que difieren?
+     En *Java* los enteros se representan con la palabra reservada *int*
+  2) ¿Cual es el objetivo de una declaracion?
+     Que el compilador reserve espacio para cada dato que declaramos y para que podamos manipular dichos datos en el programa.
+     Todos los datos, incluyendo los objetos, deben estar declarados antes de su uso.
+  3) Si se tiene la declaracion 
+     #+BEGIN_SRC java
+       final int UNO = 1;
+     #+END_SRC
+     ¿Es posible tener la siguiente instruccion?
+     #+BEGIN_SRC java
+       int negativo = -UNO;
+     #+END_SRC
+     Si es posible ya que la variable UNO no se cambia en ningun momento(que es *final*).
+  4) Indica tres formas distintas de incrementar en 1 el valor de una variable.
+     #+BEGIN_SRC java
+       int variable = 0;
+       variable ++; //Manera 1
+       variable += 1; //Manera 2
+       variable = variable + 1; //Manera 3
+     #+END_SRC
+  5) ¿Es correcta la siguiente linea de codigo?¿por que?
+     #+BEGIN_SRC java
+       int posicion // Indica la posicion del objeto ;
+     #+END_SRC
+     Es sintacticamente incorrecta, el *;* es detectado por el compilador como un simple comentario.
+  6) ¿Existe alguna diferencia entre tener *bancario* y *\"bancario"\*?
+     Si, ya que la primera es el nombre de una variable y la segunda es una cadena.
+  7) ¿cuales de las siguientes cadenas no pueden ser identificadores en Java?¿porque?
+     | java.awt.Graphics | *.* caracter no valido en la declaracion de indentificador           |
+     | rayos-x           | *-* caracter no valido en la declaracion de indentificador           |
+     | _123              | Si puede ser un identificor en Java, cumple con las sintaxtis        |
+     | valor calculado   | Identificadores no pueden tener espacio                              |
+     | valorCalculado    | Identificador valido                                                 |
+     | void              | No puede ser un Identificador, es una palabra reservada              |
+     | Void              | Identificador valido, pero se recomienda que cominecen con minuscula |
+     | 2diás             | Identificador incorrecto, no pueden iniciar con numeros              |
+     | segundaBase       | Identificador correcto                                               |
+     | x                 | Identificador correcto                                               |
+  8) ¿Es verdadero o falso que en Java 1/3 es distinto de 1.0/3.0?¿por que?
+     Es verdadero la primera da como resultado 0 y la segunda 0.333333 i.e. la primera es de tipo int y la segunda
+     de tipo Double
+  9) ¿Cuando es verdadera la siguiente ecuacion *(a/b)*b + (a%b) == a*?
+     #+BEGIN_SRC java :classname test
+       public class test {
+           public static void main(String[] args) {
+               int a = 0, b = 9;
+               System.out.println((a/b)*b + (a%b) == a);
+           }
+       }
+
+     #+END_SRC
+     Con estos valores la ecuacion es verdadera.
+     #+RESULTS:
+     : true
+
+  10) 
+  11) 
+  12) 
+  13) 
+  14) 
+  15) 
+  16) 
+  17) 
