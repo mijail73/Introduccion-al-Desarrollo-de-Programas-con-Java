@@ -43,7 +43,7 @@
      Es verdadero la primera da como resultado 0 y la segunda 0.333333 i.e. la primera es de tipo int y la segunda
      de tipo Double
   9) ¿Cuando es verdadera la siguiente ecuacion *(a/b)*b + (a%b) == a*?
-     #+BEGIN_SRC java :classname test
+     #+BEGIN_SRC java :classname test :export both
        public class test {
            public static void main(String[] args) {
                int a = 0, b = 9;
@@ -56,11 +56,115 @@
      #+RESULTS:
      : true
 
-  10) 
-  11) 
-  12) 
-  13) 
-  14) 
+  10) Dadas las siguientes declaracion
+      #+BEGIN_SRC java
+        int x, y;
+        float z = 3.1313f;
+        double w = 3.1212;
+        boolean verdad = true;
+        long l = 45L, m;
+      #+END_SRC
+      Evaluar las siguientes expresiones siempre y cuando sea posible. En caso de no ser posible la evaluación
+      justificar la respuesta.
+      #+BEGIN_SRC java
+        //a) Si es posible
+        x = 6;
+        //b) si es posible
+        y = 1000;
+        //c) no es posible ya que no es de tipo entero(tipos incompatibles)
+        y = 2.33333;
+        //d) no es posible, no tiene tipo
+        25 ++;
+        //e) no es posible, no pueden llevar comas
+        w = 175, 000;
+        //f) no es posible, tipos incompatibles
+        verdad = 1;
+        //g) no es posible, tipos incompatibles, possible lossy convertion
+        z = 3.1416;
+        //h) Si es posible
+        m = x * 250;
+        //i) no es posible, unexpected type
+        (x + y) ++;
+        //j) Si es posible
+        y = 1;
+
+      #+END_SRC
+  11) Volver a escribir las siguientes expresiones usando asignacion combinada, si es posible.
+      #+BEGIN_SRC java
+        //a)
+        x += 3 * y;
+        //b)
+        x += -b + 87;
+        //c)
+        x *= y - 10;
+        //d)
+        x *= 3 - y;
+        //e)
+        // esta expresion no puede llevar la asignacion combinada /= ya que cambiaria
+        // el resultado
+        x = (3 - y) / x;
+
+      #+END_SRC
+  12) Escribir el valor que tiene la variable /complejo/ después de ejecutar cada instrucción del siguiente código.
+      #+BEGIN_SRC java :classname ejercicio12 :export both
+        public class ejercicio12 {
+            public static void main(String[] args) {
+                final int FACTOR = 10;
+                int a = 1;
+                int b = 2;
+                int complejo = a + b * 3 - a * b + 3;
+                System.out.println(complejo);
+            }
+        }
+      #+END_SRC
+      Results
+      #+RESULTS:
+      : 8
+
+  13) Escribir el valor que tienen las variables c y d despues de ejecutar cada instruccion del siguiente codigo.
+            #+BEGIN_SRC java :classname ejercicio13 :export both
+              public class ejercicio13 {
+                  public static void main(String[] args) {
+                      final int FACTOR = 10;
+                      int a = 4;
+                      int b = 6;
+                      int c = (a + b) * FACTOR;
+                      int d = a + b * FACTOR;
+                      System.out.println("c = " + c);
+                      System.out.println("d = " + d);
+                  }
+              }
+      #+END_SRC
+      Results
+            #+RESULTS:
+	    | c | = | 100 |
+	    | d | = |  64 |
+
+  14) Si se tiene una variable real /val/ que tiene su valor entre 0 y 10 y se desea calcular un valor proporcional entre 0 y 100.
+      i.e. si val = 7 se espera que el valor de la variable /calculado/ sea 70, ¿ cual de las dos instrucciones siguientes es la correcta?
+      #+BEGIN_SRC java
+        //esta es la corrcta
+        double calculado = (val/10) * 100;
+      #+END_SRC
   15) 
-  16) 
-  17) 
+      #+BEGIN_SRC java
+        //a)
+        double uno = Math.pow(a, 3) * (a + 1) * (a - 7);
+        //b)
+        double dos = 1 / (1 + Math.pow(x, 2));
+        //c)
+        int q = ( (t1 * t2) / (d - k)) + t2;
+      #+END_SRC
+  16) Definir constantes o variables para los siguientes casos
+      a) el lado de un cuadrado de longitud 4.5 m -> CONSTANTE
+      b) cien metros                              -> CONSTANTE
+      c) el numero de llantas de una bicicleta    -> CONSTANTE
+      d) un numero primo                          -> VARIABLE
+      e) la raiz cuadrada de 2                    -> CONSTANTE
+      f) una interrogacion                        -> VARIABLE
+      g) el area de un cuadrado                   -> VARIABLE
+  17) Si el costo de la gasolina es de $7.50 por litro, escribir una expresión que defina el valor de la variable real /total/ como el
+      total a pagar por n litros de gasolina.
+      #+BEGIN_SRC java
+        double total = n * 7.50;
+      #+END_SRC
