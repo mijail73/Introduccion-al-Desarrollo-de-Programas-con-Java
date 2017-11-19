@@ -43,7 +43,7 @@
      Es verdadero la primera da como resultado 0 y la segunda 0.333333 i.e. la primera es de tipo int y la segunda
      de tipo Double
   9) ¿Cuando es verdadera la siguiente ecuacion *(a/b)*b + (a%b) == a*?
-     #+BEGIN_SRC java :classname test :export both
+     #+BEGIN_SRC java :classname test :results output :export both
        public class test {
            public static void main(String[] args) {
                int a = 0, b = 9;
@@ -52,7 +52,7 @@
        }
 
      #+END_SRC
-     Con estos valores la ecuacion es verdadera.
+
      #+RESULTS:
      : true
 
@@ -117,7 +117,7 @@
             }
         }
       #+END_SRC
-      Results
+
       #+RESULTS:
       : 8
 
@@ -135,7 +135,7 @@
                   }
               }
       #+END_SRC
-      Results
+
             #+RESULTS:
 	    | c | = | 100 |
 	    | d | = |  64 |
@@ -156,13 +156,21 @@
         int q = ( (t1 * t2) / (d - k)) + t2;
       #+END_SRC
   16) Definir constantes o variables para los siguientes casos
+
       a) el lado de un cuadrado de longitud 4.5 m -> CONSTANTE
-      b) cien metros                              -> CONSTANTE
-      c) el numero de llantas de una bicicleta    -> CONSTANTE
-      d) un numero primo                          -> VARIABLE
-      e) la raiz cuadrada de 2                    -> CONSTANTE
-      f) una interrogacion                        -> VARIABLE
-      g) el area de un cuadrado                   -> VARIABLE
+
+      b) cien metros -> CONSTANTE
+
+      c) el numero de llantas de una bicicleta -> CONSTANTE
+
+      d) un numero primo -> VARIABLE
+
+      e) la raiz cuadrada de 2 -> CONSTANTE
+
+      f) una interrogacion -> VARIABLE
+
+      g) el area de un cuadrado -> VARIABLE
+
   17) Si el costo de la gasolina es de $7.50 por litro, escribir una expresión que defina el valor de la variable real /total/ como el
       total a pagar por n litros de gasolina.
       #+BEGIN_SRC java
