@@ -43,7 +43,7 @@
      Es verdadero la primera da como resultado 0 y la segunda 0.333333 i.e. la primera es de tipo int y la segunda
      de tipo Double
   9) ¿Cuando es verdadera la siguiente ecuacion *(a/b)*b + (a%b) == a*?
-     #+BEGIN_SRC java :classname test :results output :export both
+     #+BEGIN_SRC java :classname test 
        public class test {
            public static void main(String[] args) {
                int a = 0, b = 9;
@@ -52,7 +52,7 @@
        }
 
      #+END_SRC
-
+     Ejecuta
      #+RESULTS:
      : true
 
