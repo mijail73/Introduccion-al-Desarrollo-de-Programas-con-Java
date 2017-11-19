@@ -43,7 +43,7 @@
      Es verdadero la primera da como resultado 0 y la segunda 0.333333 i.e. la primera es de tipo int y la segunda
      de tipo Double
   9) ¿Cuando es verdadera la siguiente ecuacion *(a/b)*b + (a%b) == a*?
-     #+BEGIN_SRC java :classname test 
+     #+BEGIN_SRC java :classname test :exports both
        public class test {
            public static void main(String[] args) {
                int a = 0, b = 9;
@@ -52,7 +52,7 @@
        }
 
      #+END_SRC
-     Ejecuta
+
      #+RESULTS:
      : true
 
@@ -106,7 +106,7 @@
 
       #+END_SRC
   12) Escribir el valor que tiene la variable /complejo/ después de ejecutar cada instrucción del siguiente código.
-      #+BEGIN_SRC java :classname ejercicio12 :export both
+      #+BEGIN_SRC java :classname ejercicio12 :exports both
         public class ejercicio12 {
             public static void main(String[] args) {
                 final int FACTOR = 10;
@@ -122,7 +122,7 @@
       : 8
 
   13) Escribir el valor que tienen las variables c y d despues de ejecutar cada instruccion del siguiente codigo.
-            #+BEGIN_SRC java :classname ejercicio13 :export both
+            #+BEGIN_SRC java :classname ejercicio13 :exports both
               public class ejercicio13 {
                   public static void main(String[] args) {
                       final int FACTOR = 10;
