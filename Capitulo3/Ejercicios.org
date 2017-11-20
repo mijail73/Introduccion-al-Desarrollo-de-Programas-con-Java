@@ -1,0 +1,212 @@
+#+TITLE: Ejercicios del capitulo tres.
+* Ejercicios
+  1) Describir en que difiere una variable para un tipo primitivo, de una variable para referencias.
+
+     La variable para tipo primitivo almacena dicho tipo primitivo y la variable para referencias solo señala el valor de la direccion a un objeto.
+
+  2) Describir en que difiere un tipo primitivo de una clase.
+
+     La diferencia esta en que el tipo de dato debe ser el nombre de una clase.(respecto a su declaracion)
+
+  3) Responder a las siguientes preguntas con verdadero o falso:
+
+     a) Verdadero
+
+     b) Verdadero
+
+     c) Verdadero
+
+     d) Falso
+
+  4) En cada una de las siguientes columnas, que representan una porcion de codigo, especificar cuantos onjetos hay, ademas de cuantas y cuales
+     referencias tiene cada una.
+     #+BEGIN_SRC java
+       Objeto t, s;
+       t = new Objeto(); //Objeto
+       s = t;//referencia
+     #+END_SRC
+     #+BEGIN_SRC java
+       Objeto t, s;
+       t = new Objeto();//Objeto
+       s = t;//referecnia
+       t = null;//referencia
+     #+END_SRC
+     #+BEGIN_SRC java
+       Objeto t, s;
+       t = new Objeto();//Objeto
+       s = new Objeto();//Objeto
+     #+END_SRC
+
+  5) Es correcto el siguiente codigo para intercambiar dos valores?¿por qué?
+     #+BEGIN_SRC java :classname Duda :exports both
+       public class Duda {
+           public static void main(String[] pps) {
+               int x = 25, y = 18;
+               //Intercambia x con y
+               y = x;
+               x = y;
+               System.out.println("Ahora x = " + x + " y = " + y);
+           }
+       }
+     #+END_SRC
+
+     #+RESULTS:
+     : Ahora x = 25 y = 25
+
+     No es correcto, ya que primero asigna *y* igual al valor de *x* y despues *x* al valor de *y* el cual ya era igual a *x*, por lo tanto las
+     dos son igual a 25.
+
+  6) Dada la siguiente instruccion:
+     #+BEGIN_SRC java
+       if ((valorNuevo >= 0) && (valorNuevo < limite)) {
+           valor = valorNuevo;
+       }
+     #+END_SRC
+
+     a) cual es el rango de valores validos para asignar el valor de *valorNuevo* a la variable *valor*.
+     
+     (0, limite]
+
+     b) indicar el rango de valores si se sustituye el operador *>=* de la condicion por el operador *>*. 
+     
+     [0, limite]
+
+     c) indicar el rango de valores permitidos si se sustituye el operador *&&* de la condicion por el operador *||*.
+     
+     (0, +infinito) || (-infinito, limite]
+     
+  7) Es correcto el siguiente codigo para encontrar el mayor de tres valores?¿por qué?
+     #+BEGIN_SRC java
+       if (valor1 > valor2 && valor1 > valor3)
+           mayor = valor1;
+       if (valor2 > valor1 && valor2 > valor3)
+           mayor = valor2;
+       else
+           mayor = valor3;
+     #+END_SRC
+     Si es correcto siempre y cuando los tres valores no son iguales, ya que si los tres son iguales entonces este codigo no asigna nada a *mayor*
+
+  8) En el programa del ejemplo 3.10 *(el libro dice ejercico 3.9, pero es el 3.10 ya que en el 3.10 hay tres jugadores)* hacer los cambios necesarios
+     para que se determine no solo el ganador sino tambien quien queda en segundo lugar y quien en tercero.
+     
+     #+BEGIN_SRC java :classname MayorValor
+       import java.util.Scanner;
+
+       public class MayorValor {
+           public static void main(String[] args) {
+               Dado miDado = new Dado();
+               Scanner in = new Scanner(System.in);
+               int mayor;
+               int valor1, valor2, valor3;
+               String nombre1, nombre2, nombre3;
+
+               System.out.println("Dame el nombre del primer jugador");
+               nombre1 = in.nextLine();
+               System.out.println("Dame el nombre del segundo jugador");
+               nombre2 = in.nextLine();
+               System.out.println("Dame el nombre del tercer jugador");
+               nombre3 = in.nextLine();
+
+               valor1 = miDado.lanzar();
+               valor2 = miDado.lanzar();
+               valor3 = miDado.lanzar();
+
+               System.out.println(nombre1 + " tienes un " + valor1);
+               System.out.println(nombre2 + " tienes un " + valor2);
+               System.out.println(nombre3 + " tienes un " + valor3);
+
+               if(valor1 > valor2 && valor1 > valor3) {
+                   mayor = valor1;
+                   prim = nombre1;
+               } else {
+                   if(valor2 > valor1 && valor2 > valor3) {
+                       mayor = valor2;
+                       prim = nombre2;
+                   } else {
+                       mayor = valor3;
+                       prim = nombre3;
+                   }
+               }
+
+               //Ejercicio8
+               int segundo, tercero;
+               String prim, segun, ter;
+               if(mayor == valor1) {
+                   if(valor2 > valor3) {
+                       segundo = valor2;
+                       tercero = valor3;
+                       segun = nombre2;
+                       ter = nombre3;
+                   } else {
+                       segundo = valor3;
+                       tercero = valor2;
+                       segun = nombre3;
+                       ter = nombre2;
+                   }
+               } else if(mayor == valor2) {
+                   if(valor1 > valor3) {
+                       segundo = valor1;
+                       tercero = valor3;
+                       segun = nombre1;
+                       ter = nombre3;
+                   } else {
+                       segundo = valor3;
+                       tercero = valor1;
+                       segun = nombre3;
+                       ter = nombre1;
+                   }
+               } else {
+                   if(valor1 > valor2) {
+                       segundo = valor1;
+                       tercero = valor2;
+                       segun = nombre1;
+                       ter = nombre2;
+                   } else {
+                       segundo = valor2;
+                       tercero = valor1;
+                       segun = nombre2;
+                       ter = nombre1;
+                   }
+               }
+
+               System.out.println("El primer lugar es " + prim + "con un valor de " + mayor);
+               System.out.println("El segundo lugar es " + segun + "con un valor de " + segundo);
+               System.out.println("El tercer lugar es " + ter + "con un valor de " + tercero);
+               
+           }
+       }
+     #+END_SRC
+
+  9) ¿Que hace el siguiente programa?
+     #+BEGIN_SRC java :classname UsoDeCadenas :exports both
+       public class UsoDeCadenas {
+           public static void main(String[] args) {
+               String frase = "Una mosca parada en la pared";
+
+               System.out.println("La frase :\"" + frase + "\" tiene " + frase.length() + " letras");
+               System.out.println("Extraje la palabra :" + frase.substring(4,10));
+
+               String otra = frase.toUpperCase().replace('E', 'A').replace('I', 'A');
+               otra = otra.replace('O', 'A').replace('U', 'A');
+               System.out.println("En mayusculas y con A: " + otra);
+
+               otra = otra.replace('A', 'O').toLowerCase();
+               System.out.println("Ahora en minusculas y con o: " + otra);
+
+               String larga = frase.concat(" roja");
+               System.out.println(larga + "\n" + frase);
+           }
+       }
+     #+END_SRC
+
+     #+RESULTS:
+     | La      | frase      | :"Una      | mosca  | parada | en    | la    | pared" | tiene  | 28 | letras |       |
+     | Extraje | la         | palabra    | :mosca |        |       |       |        |        |    |        |       |
+     | En      | mayusculas | y          | con    | A:     | ANA   | MASCA | PARADA | AN     | LA | PARAD  |       |
+     | Ahora   | en         | minusculas | y      | con    | o:    | ono   | mosco  | porodo | on | lo     | porod |
+     | Una     | mosca      | parada     | en     | la     | pared | roja  |        |        |    |        |       |
+     | Una     | mosca      | parada     | en     | la     | pared |       |        |        |    |        |       |
+
+
+/Los demas ejercicios se encuentran en su archivo EjercicioN.java/ ya que se trata que se tratan de programas
+ contrario a ejercicios "interactivos".
