@@ -1,0 +1,130 @@
+#+TITLE: Ejercicios del capitulo cuatro.
+* Ejercicios
+  1) ¿Cuales son los componentes de una clase?
+     
+     Metodos y Atributos
+
+  2) ¿Cuál es la visibilidad mas frecuente de un atributo?
+     *private*, ¿y la de un método? *public*
+
+  3) ¿Cuáles son los datos con los que puede trabajar un método?
+
+     Un método puede trabajar con cualquier atributo del objeto de la clase,
+     con parametros y variables del mismo método, con los datos obtenidos de otros métodos
+     y con los atributos definidos como publicos o estaticos de otras clases.
+
+  4) ¿Qué es un método constructor?
+
+     Un constructor es un metodo cuyo objetivo es asignar valor inicial a cada atributo de un 
+     objeto recien creado, con lo cual se garantiza que el objeto se crea con un estado valido.
+     El método con el que se inician los objetos de esa clase y lleva
+     por nombre, el nombre de la clase. No tiene especificado valor de regreso, ni siquiera void.
+     La única forma de llamarlo es usando el operador *new*.
+
+  5) ¿Qué significa que un método este sobrecargado?
+
+     Quiere decir que ya existe en la clase un metodo con el mismo nombre, se distinguen por
+     la diferencia de sus firmas.
+     
+  6) ¿Cuándo se utiliza la palabra reservada *this*?
+
+     Cuando se quiere interacuar con el objeto que llamo el metodo donde esta la palabra *this*.
+
+  7) ¿Qué debe de hacerse para que un metodo pueda devolver un objeto?
+
+     Primero se debe especificar en la firma del método, que se devolvera un objeto, y se debe usar
+     en el cuerpo del método la instruccion *return* seguida de la referencia del objeto, pues con ella
+     se devuelve el valor y se termina la ejecucion del método.
+
+  8) En la clase /Punto/, ¿cuál es la diferencia entre método *asignarPunto(Punto p)* y el constructor
+     de copia?
+
+     La diferencia es la manera de accesar a los atributos de la clase, el primero los obtiene con el metodo
+     obtenerX() y obtenerY() (getters) y el segundo ocupa la notacion punto para acceder a dichos atributos.
+
+  9) El resultado de la ejecucion del programa es:
+
+     /La nueva hora es 10:10:254:50:50/
+
+  10) Agregar a la clase Hora un método para sumar dos horas y dejar el resultado en una hora que no sea la 
+      que llama al método
+
+      #+BEGIN_SRC java
+        public resultado sumaHoras(Hora h) {
+            int sumaSegundos = enSegundos() + h.enSegundos();
+            Hora suma = enHoras(sumaSegundos);
+            return suma;
+        }
+      #+END_SRC
+
+  11) Escribir un programa para probar la clase Hora.
+
+  12) La clase Duda tiene errores, determinar cuales son:
+
+      #+BEGIN_SRC java
+        //Clase modificada para eliminar lo errores
+        public class Duda {
+            private String direccion;
+            private int numPisos;
+
+            public int obtenerNumPisos() {
+                return numPisos;
+            }
+
+            public void asignarNumPisos(int n) {
+                numPisos = n;
+            }
+        }
+      #+END_SRC
+
+  13) 
+
+      #+BEGIN_SRC java :classname Trio :exports both
+        public class Trio {
+            private int x, y, z;
+            public Trio() { x = 0; y = 0; z = 0; }
+            public Trio(int a, int b, int c) { x = a; y = b; z = c; }
+            //Escribir un constructor de copia
+            public Trio(Trio t) { x = t.x; y = t.y; z = t.z; }
+            //Escribir un metodo esLaSuma() que devuelva verdadero si cualquiera de los
+            //elementos del trio es la suma de los otros dos y falso en otro caso.
+            public boolean esLaSuma() {
+                return ( x == y + z || y == x + z || z == x + y);
+            }
+            // SOlo para probar
+            public static void main(String[] args) {
+                Trio test = new Trio(3, 3, 6);
+                System.out.println(test.esLaSuma());
+            }
+        }
+      #+END_SRC
+
+      #+RESULTS:
+      : true
+
+  14) Se tiene la clase *Mensaje* que puede almacenar un mensaje y desplegarlo.
+      Definir una clase *PruebaMensaje* para probar la clase *Mensaje*, en el metodo *main*
+      de ella se deben crear dos objetos, asignarles un texto cualquiera y desplegarlos.
+      En caso de ser necesario, escribir otros metodos.
+
+      #+BEGIN_SRC java :classname Mensaje :exports both
+        public class Mensaje {
+            private String mensaje;
+            public Mensaje() { mensaje = ""; }
+            public Mensaje(String x) { mensaje = x; }
+            public String obtenerMensaje() { return mensaje; }
+            public void asignarMensaje(String m) { mensaje = m; }
+            public String toString() { return mensaje; }
+
+            public static void main(String[] args) {
+                Mensaje uno = new Mensaje("Primera parte");
+                Mensaje dos = new Mensaje(" Segunda parte. :)");
+                System.out.println(uno.toString() + dos.toString() );
+            }
+        }
+      #+END_SRC
+
+      #+RESULTS:
+      : Primera parte Segunda parte. :)
+
+  15) 
